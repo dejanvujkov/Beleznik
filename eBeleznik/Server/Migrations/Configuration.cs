@@ -6,14 +6,14 @@ namespace Server.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Server.Context>
+    internal sealed class Configuration : DbMigrationsConfiguration<Server.NotesContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Server.Context context)
+        protected override void Seed(Server.NotesContext context)
         {
 		//  This method will be called after migrating to the latest version.
 

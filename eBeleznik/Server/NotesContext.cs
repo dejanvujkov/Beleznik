@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class Context : DbContext
+    public class NotesContext : DbContext
     {
-	  public Context() :base("name=Db") { }
+	  public NotesContext() :base("name=Db") { }
 
-	  public DbSet<Note> NoteContext { get; set; }
-	  public DbSet<User> UserContext { get; set; }
+	  public DbSet<Note> Notes { get; set; }
+	  public DbSet<User> Users { get; set; }
     }
 }
