@@ -1,5 +1,6 @@
 namespace Server.Migrations
 {
+    using Common.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,10 +15,19 @@ namespace Server.Migrations
 
         protected override void Seed(Server.Context context)
         {
-            //  This method will be called after migrating to the latest version.
+		//  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+		//  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+		//  to avoid creating duplicate seed data.
+
+		context.UserContext.AddOrUpdate(u => u.username, new User
+		{
+		    groups = "admin",
+		    username = "admin",
+		    password = "admin",
+		    name = "Dejan",
+		    surname = "Vujkov"
+		});
         }
     }
 }
