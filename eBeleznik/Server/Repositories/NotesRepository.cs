@@ -20,16 +20,19 @@ namespace Server.Repositories
 		note.text = text;
 		Context.Notes.Attach(note);
 		Context.Entry(note).Property(p => p.text).IsModified = true;
+		Console.WriteLine($"Beleska [{note.id}] promenjena.");
 		return true;
 	  }
 
 	  public bool DeleteNoteById(int id)
 	  {
+		Console.WriteLine($"Beleska [{id}] obrisana");
 		return Remove(GetNoteById(id));
 	  }
 
 	  public Note GetNoteById(int id)
 	  {
+		Console.WriteLine($"Beleska [{id}] uzeta");
 		return Context.Notes.FirstOrDefault(n => n.id.Equals(id));
 	  }
 
@@ -49,7 +52,7 @@ namespace Server.Repositories
 			  }
 		    }
 		}
-
+		Console.WriteLine($"Beleske za korisnika [{user.username}] uzete.");
 		return returnNote;
 
 	  }
