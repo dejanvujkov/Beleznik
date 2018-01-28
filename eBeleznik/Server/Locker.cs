@@ -8,8 +8,7 @@ namespace Server
 {
     public class Locker
     {
-
-	  public static readonly object lockUser = new object();
-	  public static readonly object lockNote = new object();
+        public static readonly object lockUser = new object();
+        public static readonly object lockBeleska = new object();
     }
 }
